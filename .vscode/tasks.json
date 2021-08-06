@@ -1,0 +1,24 @@
+//by Kunlun Huang <kunlun.huang@foxmail.com>
+{
+    "taskName": "build nim code",
+    "command": "nim",
+    "cwd": "${workspaceRoot}",
+    "tasks": [
+        {
+            "label": "build and run",
+            "args": ["c", "-d:release", "-d:ssl", "-o:bin/${fileBasenameNoExtension}", "-r", "${fileBasename}"],
+            "group": "build",
+            "type": "shell",
+        },
+        {
+            "label": "build only",
+            "args": ["c", "--compile_only", "-d:ssl", "-o:bin/${fileBasenameNoExtension}", "${fileBasename}"],
+            "group": "build",
+            "type": "shell",
+        }
+
+    ]
+
+    
+
+}
